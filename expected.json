@@ -1,0 +1,186 @@
+[
+ {
+  "fn": "seamTruth",
+  "args": [
+   120,
+   10
+  ],
+  "out": "120 feet of eave against the 10-foot section claim is 12 sections and 11 seams - a row of future drips honestly."
+ },
+ {
+  "fn": "seamTruth",
+  "args": [
+   8,
+   10
+  ],
+  "out": "8 feet of eave against the 10-foot section claim is 1 section and 0 seams - barely any drips honestly."
+ },
+ {
+  "fn": "seamTruth",
+  "args": [
+   85,
+   10
+  ],
+  "out": "85 feet of eave against the 10-foot section claim is 9 sections and 8 seams - a few future drips honestly."
+ },
+ {
+  "fn": "seamTruth",
+  "args": [
+   220,
+   10
+  ],
+  "out": "220 feet of eave against the 10-foot section claim is 22 sections and 21 seams - a whole choir of drips honestly."
+ },
+ {
+  "fn": "seamTruth",
+  "args": [
+   600,
+   10
+  ],
+  "out": "600 feet of eave against the 10-foot section claim is 60 sections and 59 seams - a whole choir of drips honestly."
+ },
+ {
+  "fn": "seamTruth",
+  "args": [
+   10,
+   10
+  ],
+  "out": "10 feet of eave against the 10-foot section claim is 1 section and 0 seams - barely any drips honestly."
+ },
+ {
+  "fn": "seamTruth",
+  "args": [
+   0,
+   10
+  ],
+  "err": "the run must be above zero"
+ },
+ {
+  "fn": "seamTruth",
+  "args": [
+   120,
+   0
+  ],
+  "err": "the section length must be above zero"
+ },
+ {
+  "fn": "spoutTruth",
+  "args": [
+   2400,
+   600
+  ],
+  "out": "2400 square feet of roof against the 600-square-foot downspout norm is 4 downspouts - a working set honestly."
+ },
+ {
+  "fn": "spoutTruth",
+  "args": [
+   500,
+   600
+  ],
+  "out": "500 square feet of roof against the 600-square-foot downspout norm is 1 downspout - a single downspout honestly."
+ },
+ {
+  "fn": "spoutTruth",
+  "args": [
+   1500,
+   600
+  ],
+  "out": "1500 square feet of roof against the 600-square-foot downspout norm is 3 downspouts - a modest set honestly."
+ },
+ {
+  "fn": "spoutTruth",
+  "args": [
+   5000,
+   600
+  ],
+  "out": "5000 square feet of roof against the 600-square-foot downspout norm is 9 downspouts - a downspout on every corner honestly."
+ },
+ {
+  "fn": "spoutTruth",
+  "args": [
+   600,
+   600
+  ],
+  "out": "600 square feet of roof against the 600-square-foot downspout norm is 1 downspout - a single downspout honestly."
+ },
+ {
+  "fn": "spoutTruth",
+  "args": [
+   0,
+   600
+  ],
+  "err": "the roof area must be above zero"
+ },
+ {
+  "fn": "spoutTruth",
+  "args": [
+   2400,
+   0
+  ],
+  "err": "the downspout norm must be above zero"
+ },
+ {
+  "fn": "slopeTruth",
+  "args": [
+   40,
+   0.25
+  ],
+  "out": "40 feet at the 0.25-inch-per-ten-feet slope norm falls 1.0 inch toward the downspout - a gentle fall honestly."
+ },
+ {
+  "fn": "slopeTruth",
+  "args": [
+   30,
+   0.25
+  ],
+  "out": "30 feet at the 0.25-inch-per-ten-feet slope norm falls 0.8 inches toward the downspout - a gentle fall honestly."
+ },
+ {
+  "fn": "slopeTruth",
+  "args": [
+   100,
+   0.25
+  ],
+  "out": "100 feet at the 0.25-inch-per-ten-feet slope norm falls 2.5 inches toward the downspout - a working fall honestly."
+ },
+ {
+  "fn": "slopeTruth",
+  "args": [
+   200,
+   0.5
+  ],
+  "out": "200 feet at the 0.5-inch-per-ten-feet slope norm falls 10.0 inches toward the downspout - a determined fall honestly."
+ },
+ {
+  "fn": "slopeTruth",
+  "args": [
+   40,
+   0.5
+  ],
+  "out": "40 feet at the 0.5-inch-per-ten-feet slope norm falls 2.0 inches toward the downspout - a working fall honestly."
+ },
+ {
+  "fn": "slopeTruth",
+  "args": [
+   1,
+   0.25
+  ],
+  "out": "1 foot at the 0.25-inch-per-ten-feet slope norm falls less than a tenth of an inch toward the downspout - barely a fall honestly."
+ },
+ {
+  "fn": "slopeTruth",
+  "args": [
+   0,
+   0.25
+  ],
+  "err": "the run must be above zero"
+ },
+ {
+  "fn": "slopeTruth",
+  "args": [
+   40,
+   0
+  ],
+  "err": "the slope norm must be above zero"
+ }
+]
