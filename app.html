@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gutter Math</title>
+<style>
+  :root { --accent: #3a6a6e; --warn: #a83232; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 16px 64px; background: #f5f7f7; color: #23282a;
+         font-family: Georgia, 'Times New Roman', serif; }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 { color: var(--accent); font-size: 2.2rem; margin: 0 0 4px; }
+  .tag { font-style: italic; color: var(--accent); margin: 0 0 28px; }
+  .boundary { border-left: 4px solid var(--warn); background: #fdf1f1; padding: 16px 20px;
+              border-radius: 8px; margin: 0 0 28px; }
+  .boundary h2 { color: var(--warn); font-size: 1.1rem; margin: 0 0 8px; }
+  .boundary p { margin: 0; line-height: 1.5; }
+  .card { background: #fff; border: 1px solid #dce2e3; border-left: 4px solid var(--accent);
+          border-radius: 8px; padding: 20px 24px; margin: 0 0 24px; }
+  .card h2 { margin: 0 0 14px; font-size: 1.25rem; }
+  label { display: block; font-size: 0.95rem; margin: 10px 0 4px; }
+  input { width: 100%; max-width: 220px; padding: 8px 10px; font-size: 1rem;
+          border: 1px solid #c2cbcd; border-radius: 6px; background: #f0f3f3; }
+  .out { margin-top: 16px; font-size: 1.05rem; font-weight: bold; color: var(--accent);
+         line-height: 1.5; }
+  .out.err { color: var(--warn); }
+  footer { margin-top: 32px; font-size: 0.85rem; color: #7f8a8c; line-height: 1.5; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Gutter Math</h1>
+  <p class="tag">Seam truth, downspout truth and slope truth - labeled norms, honest arithmetic.</p>
+
+  <div class="boundary">
+    <h2>The boundary</h2>
+    <p>Gutter Math keeps section, seam, downspout and slope arithmetic only. Every figure is a
+    labeled norm, not a promise - roof shape, rainfall and corner cuts change real runs. Gutter
+    work is ladder work at real height: follow the ladder's and the manufacturer's instructions,
+    and call a professional when the height is beyond you. Call 811 before burying any drain.</p>
+  </div>
+
+  <div class="card">
+    <h2>The seam truth</h2>
+    <label for="m-feet">Eave to cover (feet)</label>
+    <input id="m-feet" type="number" step="any" value="120">
+    <label for="m-section">Claimed section length (feet)</label>
+    <input id="m-section" type="number" step="any" value="10">
+    <p class="out" id="m-out"></p>
+  </div>
+
+  <div class="card">
+    <h2>The downspout truth</h2>
+    <label for="d-area">Roof area draining here (square feet)</label>
+    <input id="d-area" type="number" step="any" value="2400">
+    <label for="d-norm">Downspout norm (square feet each)</label>
+    <input id="d-norm" type="number" step="any" value="600">
+    <p class="out" id="d-out"></p>
+  </div>
+
+  <div class="card">
+    <h2>The slope truth</h2>
+    <label for="p-feet">Gutter run (feet)</label>
+    <input id="p-feet" type="number" step="any" value="40">
+    <label for="p-rate">Slope norm (inches per ten feet)</label>
+    <input id="p-rate" type="number" step="any" value="0.25">
+    <p class="out" id="p-out"></p>
+  </div>
+
+  <footer>
+    Every figure here is hypothetical arithmetic on labeled norms, not a statement about any real
+    gutter, downspout or roof. <a href="index.html">About Gutter Math</a>
+  </footer>
+</main>
+<script src="engine.js"></script>
+<script>
+function num(id) { return parseFloat(document.getElementById(id).value); }
+function render(id, fn) {
+  const el = document.getElementById(id);
+  try {
+    el.textContent = fn();
+    el.classList.remove("err");
+  } catch (e) {
+    el.textContent = e.message;
+    el.classList.add("err");
+  }
+}
+function update() {
+  render("m-out", () => seamTruth(num("m-feet"), num("m-section")));
+  render("d-out", () => spoutTruth(num("d-area"), num("d-norm")));
+  render("p-out", () => slopeTruth(num("p-feet"), num("p-rate")));
+}
+document.querySelectorAll("input").forEach(i => i.addEventListener("input", update));
+update();
+</script>
+</body>
+</html>
